@@ -12,27 +12,27 @@ import japgolly.scalajs.react.extra.router._
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
 import scala.scalajs.js.typedarray._
 
-@JSExport("TodoMVC")
-object TodoMVC extends JSApp {
+@JSExport("NetstatApp")
+object NetstatApp extends JSApp {
 
   val baseUrl = BaseUrl(dom.window.location.href.takeWhile(_ != '#'))
 
-  val routerConfig: RouterConfig[TodoFilter] = RouterConfigDsl[TodoFilter].buildConfig { dsl =>
+  val routerConfig: RouterConfig[NetstatRecordFilter] = RouterConfigDsl[NetstatRecordFilter].buildConfig { dsl =>
     import dsl._
 
-    val todoConnection = AppCircuit.connect(_.todos)
+    val netstatConnection = AppCircuit.connect(_.entries)
 
     /* how the application renders the list given a filter */
-    def filterRoute(s: TodoFilter): Rule = staticRoute("#/" + s.link, s) ~> renderR(router => todoConnection(p => TodoList(p, s, router)))
+    def filterRoute(s: NetstatRecordFilter): Rule = staticRoute("#/" + s.link, s) ~> renderR(router => netstatConnection(p => NetstatRecordList(p, s, router)))
 
-    val filterRoutes: Rule = TodoFilter.values.map(filterRoute).reduce(_ | _)
+    val filterRoutes: Rule = NetstatRecordFilter.values.map(filterRoute).reduce(_ | _)
 
     /* build a final RouterConfig with a default page */
-    filterRoutes.notFound(redirectToPage(TodoFilter.All)(Redirect.Replace))
+    filterRoutes.notFound(redirectToPage(NetstatRecordFilter.All)(Redirect.Replace))
   }
 
   /** The router is itself a React component, which at this point is not mounted (U-suffix) */
-  val router: ReactComponentU[Unit, Resolution[TodoFilter], Any, TopNode] =
+  val router: ReactComponentU[Unit, Resolution[NetstatRecordFilter], Any, TopNode] =
     Router(baseUrl, routerConfig.logToConsole)()
 
   /**
@@ -41,7 +41,7 @@ object TodoMVC extends JSApp {
     * @param model
     * @return
     */
-  def pickle(model: AppModel) = {
+  def pickle(model: NetstatModel) = {
     val data = Pickle.intoBytes(model)
     data.typedArray().subarray(data.position, data.limit)
   }
@@ -53,7 +53,7 @@ object TodoMVC extends JSApp {
     * @return
     */
   def unpickle(data: Int8Array) = {
-    Unpickle[AppModel].fromBytes(TypedArrayBuffer.wrap(data))
+    Unpickle[NetstatModel].fromBytes(TypedArrayBuffer.wrap(data))
   }
 
   @JSExport
@@ -63,7 +63,7 @@ object TodoMVC extends JSApp {
     // hook it into Ctrl+Shift+S and Ctrl+Shift+L
     Hooks.hookPersistState("test", AppCircuit)
 
-    AppCircuit.dispatch(InitTodos)
+    AppCircuit.dispatch(LoadNetstatModel)
     ReactDOM.render(router, dom.document.getElementsByClassName("todoapp")(0))
   }
 }

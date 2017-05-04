@@ -154,6 +154,10 @@ label[for='toggle-all'] {
     border-bottom: 1px solid #ededed;
 }
 
+.todo-list li span {
+    margin-right: 2em;
+}
+
 .todo-list li:last-child {
     border-bottom: none;
 }

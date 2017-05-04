@@ -1,0 +1,896 @@
+[
+  {
+    "agent": "netstat",
+    "action": "tulpen",
+    "sender": "loadbalancer-1",
+    "statuscode": 0,
+    "statusmsg": "OK",
+    "data": {
+      "out": [
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.85.65:3306",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.85.5:3306",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.89:3306",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.61:3306",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_eth1_:8080",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_eth0_:8080",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.85.105:8080",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.41:80",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.208:80",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.85.107:80",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.241:80",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.130:80",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.85.56:80",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.85.9:80",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.185:8080",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.125:8081",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.85.66:8082",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:22",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2615/sshd"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.85.12:4567",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "10.102.84.220:4567",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:8888",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2652/xinetd"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:25",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2545/master"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:5666",
+          "foreign_addr": "*:*",
+          "user": "104",
+          "pid_program": "2397/nrpe"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:514",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2064/rsyslogd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:6147",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2064/rsyslogd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1800/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1749/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1698/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:18534",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1698/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.105:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.65:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.5:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.12:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.220:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.41:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.11:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.67:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.93:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.170:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.169:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.208:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.107:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.241:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.130:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.56:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.9:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.121:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.85.66:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.89:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.185:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.61:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "10.102.84.125:123",
+          "foreign_addr": "*:*",
+          "user": "101",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth2_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth1_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth0_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_localhost_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2443/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:8449",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2286/haproxy"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:4368",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1800/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:50506",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1749/dhclient"
+        }
+      ]
+    }
+  },
+  {
+    "agent": "netstat",
+    "action": "tulpen",
+    "sender": "ais-1",
+    "statuscode": 0,
+    "statusmsg": "OK",
+    "data": {
+      "out": [
+        {
+          "proto": "tcp",
+          "local_addr": "_localhost_:8005",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:8009",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_eth1_:5708",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:50350",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:9999",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:111",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2199/rpcbind"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:8080",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:22",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "3126/sshd"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:33143",
+          "foreign_addr": "*:*",
+          "user": "107",
+          "pid_program": "2230/rpc.statd"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:25",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "3076/master"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:56415",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_eth0_:4000",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:5666",
+          "foreign_addr": "*:*",
+          "user": "104",
+          "pid_program": "2951/nrpe"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:35937",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:48679",
+          "foreign_addr": "*:*",
+          "user": "107",
+          "pid_program": "2230/rpc.statd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1914/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1819/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1717/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:111",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2199/rpcbind"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth2_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "3003/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth1_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "3003/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth0_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "3003/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_localhost_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "3003/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "3003/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:161",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "3072/snmpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:49503",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1717/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:45564",
+          "foreign_addr": "*:*",
+          "user": "1000",
+          "pid_program": "6620/java"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:514",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2488/rsyslogd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:514",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2488/rsyslogd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:677",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2199/rpcbind"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_localhost_:710",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2230/rpc.statd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:4903",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1914/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:5743",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1819/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:55356",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2488/rsyslogd"
+        }
+      ]
+    }
+  },
+  {
+    "agent": "netstat",
+    "action": "tulpen",
+    "sender": "ais-1",
+    "statuscode": 0,
+    "statusmsg": "OK",
+    "data": {
+      "out": [
+        {
+          "proto": "tcp",
+          "local_addr": "*:9998",
+          "foreign_addr": "*:*",
+          "user": "999",
+          "pid_program": "2134/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:9999",
+          "foreign_addr": "*:*",
+          "user": "998",
+          "pid_program": "2129/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_localhost_:8080",
+          "foreign_addr": "*:*",
+          "user": "999",
+          "pid_program": "2134/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_eth0_:8080",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2100/nginx.conf"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_localhost_:8081",
+          "foreign_addr": "*:*",
+          "user": "998",
+          "pid_program": "2129/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_eth0_:8081",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2100/nginx.conf"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_localhost_:8082",
+          "foreign_addr": "*:*",
+          "user": "997",
+          "pid_program": "2452/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_eth0_:8082",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2100/nginx.conf"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "_eth0_:1234",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2100/nginx.conf"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:12851",
+          "foreign_addr": "*:*",
+          "user": "999",
+          "pid_program": "2134/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:22",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2952/sshd"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:25",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2877/master"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:14940",
+          "foreign_addr": "*:*",
+          "user": "998",
+          "pid_program": "2129/java"
+        },
+        {
+          "proto": "tcp",
+          "local_addr": "*:5666",
+          "foreign_addr": "*:*",
+          "user": "110",
+          "pid_program": "2738/nrpe"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:514",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2051/rsyslogd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:51763",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1687/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:41623",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1738/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:2745",
+          "foreign_addr": "*:*",
+          "user": "999",
+          "pid_program": "2134/java"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:44301",
+          "foreign_addr": "*:*",
+          "user": "998",
+          "pid_program": "2129/java"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1789/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1738/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:68",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1687/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth2_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2767/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth1_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2767/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_eth0_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2767/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "_localhost_:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2767/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:123",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2767/ntpd"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:29033",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "1789/dhclient"
+        },
+        {
+          "proto": "udp",
+          "local_addr": "*:61886",
+          "foreign_addr": "*:*",
+          "user": "0",
+          "pid_program": "2051/rsyslogd"
+        }
+      ]
+    }
+  }
+]

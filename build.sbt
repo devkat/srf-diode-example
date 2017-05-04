@@ -8,7 +8,7 @@ scalaVersion := "2.12.1"
 
 workbenchSettings
 
-bootSnippet := "TodoMVCApp().main();"
+bootSnippet := "NetstatApp().main();"
 
 testFrameworks += new TestFramework("utest.runner.Framework")
 
@@ -18,6 +18,7 @@ emitSourceMaps := true
 persistLauncher := true
 
 val diodeVersion = "1.1.1"
+val circeVersion = "0.7.0"
 
 libraryDependencies ++= Seq(
   "org.scala-js"                      %%% "scalajs-dom"    % "0.9.1",
@@ -27,7 +28,11 @@ libraryDependencies ++= Seq(
   "io.suzaku"                         %%% "diode-devtools" % diodeVersion,
   "io.suzaku"                         %%% "diode-react"    % diodeVersion,
   "io.suzaku"                         %%% "boopickle"      % "1.2.6"
-)
+) ++ Seq(
+  "io.circe" %%% "circe-core",
+  "io.circe" %%% "circe-generic",
+  "io.circe" %%% "circe-parser"
+).map(_ % circeVersion)
 
 jsDependencies ++= Seq(
   "org.webjars.bower" % "react" % "15.3.2" / "react-with-addons.js" commonJSName "React" minified "react-with-addons.min.js",
