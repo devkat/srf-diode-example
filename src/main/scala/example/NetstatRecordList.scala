@@ -35,11 +35,13 @@ object NetstatRecordList {
     def recordList(dispatch: Action => Callback, records: List[NetstatRecord], tcpCount: Int) =
       <.section(
         ^.className := "main",
-        <.ul(
-          ^.className := "todo-list",
-          records.map(
-            record =>
-              NetstatRecordView(NetstatRecordView.Props(record = record)))
+        <.table(
+          <.tbody(
+            ^.className := "todo-list",
+            records.map(
+              record =>
+                NetstatRecordView(NetstatRecordView.Props(record = record)))
+          )
         )
       )
 

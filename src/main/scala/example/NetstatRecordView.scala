@@ -10,15 +10,13 @@ object NetstatRecordView {
 
   class Backend($ : BackendScope[Props, Unit]) {
     def render(p: Props): ReactElement = {
-      <.li(
-        <.div(
-          ^.className := "view",
-          <.span(p.record.proto),
-          <.span(p.record.foreign_addr),
-          <.span(p.record.local_addr),
-          <.span(p.record.user),
-          <.span(p.record.pid_program)
-        )
+      <.tr(
+        ^.className := "view",
+        <.td(p.record.proto),
+        <.td(p.record.foreign_addr),
+        <.td(p.record.local_addr),
+        <.td(p.record.user),
+        <.td(p.record.pid_program)
       )
     }
   }
