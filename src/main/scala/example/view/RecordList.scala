@@ -1,15 +1,15 @@
-package example
+package example.view
 
 import diode.Action
 import diode.react.ModelProxy
+import example._
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.extra.router._
 import japgolly.scalajs.react.vdom.prefix_<^._
-import org.scalajs.dom.ext.KeyCode
 
-object NetstatRecordList {
+object RecordList {
 
-  case class Props(proxy: ModelProxy[List[NetstatEntry]], currentFilter: NetstatRecordFilter, ctl: RouterCtl[NetstatRecordFilter])
+  case class Props(proxy: ModelProxy[List[Entry]], currentFilter: RecordFilter, ctl: RouterCtl[RecordFilter])
 
   class Backend($ : BackendScope[Props, Unit]) {
     def mounted(props: Props) = Callback {}
@@ -19,7 +19,7 @@ object NetstatRecordList {
       val dispatch: Action => Callback = p.proxy.dispatchCB
       val records = proxy.flatMap(_.data.out)
       val filteredTodos = records filter p.currentFilter.accepts
-      val tcpCount = records count NetstatRecordFilter.Tcp.accepts
+      val tcpCount = records count RecordFilter.Tcp.accepts
       val udpCount = records.length - tcpCount
 
       <.div(
@@ -32,7 +32,7 @@ object NetstatRecordList {
       )
     }
 
-    def recordList(dispatch: Action => Callback, entries: List[NetstatEntry], filter: NetstatRecordFilter, tcpCount: Int) =
+    def recordList(dispatch: Action => Callback, entries: List[Entry], filter: RecordFilter, tcpCount: Int) =
       <.section(
         ^.className := "main",
         <.table(
@@ -54,7 +54,7 @@ object NetstatRecordList {
                 )
               ),
               entry.data.out.filter(filter.accepts).map(record =>
-                NetstatRecordView(NetstatRecordView.Props(
+                RecordView(RecordView.Props(
                   record = record,
                   onDelete = dispatch(DeleteRecord(entry.id, record.id))
                 )))
@@ -63,9 +63,9 @@ object NetstatRecordList {
         )
       )
 
-    def footer(p: Props, dispatch: Action => Callback, currentFilter: NetstatRecordFilter, tcpCount: Int, udpCount: Int): ReactElement =
-      NetstatFooter(
-        NetstatFooter.Props(
+    def footer(p: Props, dispatch: Action => Callback, currentFilter: RecordFilter, tcpCount: Int, udpCount: Int): ReactElement =
+      Footer(
+        Footer.Props(
           filterLink = p.ctl.link,
           currentFilter = currentFilter,
           onSelectFilter = f => dispatch(SelectRecordFilter(f)),
@@ -79,6 +79,6 @@ object NetstatRecordList {
     .componentDidMount(scope => scope.backend.mounted(scope.props))
     .build
 
-  def apply(proxy: ModelProxy[List[NetstatEntry]], currentFilter: NetstatRecordFilter, ctl: RouterCtl[NetstatRecordFilter]) =
+  def apply(proxy: ModelProxy[List[Entry]], currentFilter: RecordFilter, ctl: RouterCtl[RecordFilter]) =
     component(Props(proxy, currentFilter, ctl))
 }

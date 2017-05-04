@@ -1,20 +1,21 @@
-package example
+package example.view
 
+import example.RecordFilter
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.prefix_<^._
 
-object NetstatFooter {
+object Footer {
 
   case class Props(
-      filterLink: NetstatRecordFilter => ReactTag,
-      onSelectFilter: NetstatRecordFilter => Callback,
-      currentFilter: NetstatRecordFilter,
-      tcpCount: Int,
-      udpCount: Int
+                    filterLink: RecordFilter => ReactTag,
+                    onSelectFilter: RecordFilter => Callback,
+                    currentFilter: RecordFilter,
+                    tcpCount: Int,
+                    udpCount: Int
   )
 
   class Backend($ : BackendScope[Props, Unit]) {
-    def filterLink(p: Props)(s: NetstatRecordFilter) =
+    def filterLink(p: Props)(s: RecordFilter) =
       <.li(p.filterLink(s)((p.currentFilter == s) ?= (^.className := "selected"), s.label))
 
     def render(p: Props) =
@@ -28,7 +29,7 @@ object NetstatFooter {
         ),
         <.ul(
           ^.className := "filters",
-          NetstatRecordFilter.values.map(filterLink(p)(_))
+          RecordFilter.values.map(filterLink(p)(_))
         )
       )
   }

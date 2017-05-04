@@ -1,12 +1,12 @@
-package example
+package example.view
 
+import example.Record
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.prefix_<^._
-import org.scalajs.dom.ext.KeyCode
 
-object NetstatRecordView {
+object RecordView {
 
-  case class Props(record: NetstatRecord,
+  case class Props(record: Record,
                    onDelete: Callback)
 
   class Backend($ : BackendScope[Props, Unit]) {

@@ -2,6 +2,7 @@ package example
 
 import boopickle.Default._
 import diode.dev.{Hooks, PersistStateIDB}
+import example.view.RecordList
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.extra.router._
 import org.scalajs.dom
@@ -16,22 +17,22 @@ object NetstatApp extends JSApp {
 
   val baseUrl = BaseUrl(dom.window.location.href.takeWhile(_ != '#'))
 
-  val routerConfig: RouterConfig[NetstatRecordFilter] = RouterConfigDsl[NetstatRecordFilter].buildConfig { dsl =>
+  val routerConfig: RouterConfig[RecordFilter] = RouterConfigDsl[RecordFilter].buildConfig { dsl =>
     import dsl._
 
     val netstatConnection = AppCircuit.connect(_.entries)
 
     /* how the application renders the list given a filter */
-    def filterRoute(s: NetstatRecordFilter): Rule = staticRoute("#/" + s.link, s) ~> renderR(router => netstatConnection(p => NetstatRecordList(p, s, router)))
+    def filterRoute(s: RecordFilter): Rule = staticRoute("#/" + s.link, s) ~> renderR(router => netstatConnection(p => RecordList(p, s, router)))
 
-    val filterRoutes: Rule = NetstatRecordFilter.values.map(filterRoute).reduce(_ | _)
+    val filterRoutes: Rule = RecordFilter.values.map(filterRoute).reduce(_ | _)
 
     /* build a final RouterConfig with a default page */
-    filterRoutes.notFound(redirectToPage(NetstatRecordFilter.All)(Redirect.Replace))
+    filterRoutes.notFound(redirectToPage(RecordFilter.All)(Redirect.Replace))
   }
 
   /** The router is itself a React component, which at this point is not mounted (U-suffix) */
-  val router: ReactComponentU[Unit, Resolution[NetstatRecordFilter], Any, TopNode] =
+  val router: ReactComponentU[Unit, Resolution[RecordFilter], Any, TopNode] =
     Router(baseUrl, routerConfig.logToConsole)()
 
   /**

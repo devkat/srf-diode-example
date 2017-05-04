@@ -10,18 +10,18 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 case object LoadNetstatModel extends Action
 
-case class NewNetstatModel(entries: List[NetstatEntry]) extends Action
+case class NewNetstatModel(entries: List[Entry]) extends Action
 
-case class SelectRecordFilter(filter: NetstatRecordFilter) extends Action
+case class SelectRecordFilter(filter: RecordFilter) extends Action
 
 case class DeleteRecord(entryId: Option[Long], recordId: Option[Long]) extends Action
 
 
-class NetstatHandler[M](modelRW: ModelRW[M, List[NetstatEntry]]) extends ActionHandler(modelRW) {
+class NetstatHandler[M](modelRW: ModelRW[M, List[Entry]]) extends ActionHandler(modelRW) {
 
   private def jsonUrl = "/target/scala-2.12/classes/netstat_output.json"
 
-  def parseNetstatModel(s: String): List[NetstatEntry] = decode[List[NetstatEntry]](s).
+  def parseNetstatModel(s: String): List[Entry] = decode[List[Entry]](s).
     getOrElse(Nil).
     zipWithIndex.
     map { case (entry, ei) =>

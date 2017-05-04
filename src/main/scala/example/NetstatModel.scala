@@ -1,24 +1,24 @@
 package example
 
-case class NetstatModel(entries: List[NetstatEntry])
+case class NetstatModel(entries: List[Entry])
 
-case class NetstatEntry(id: Option[Long], agent: String, action: String, sender: String, statuscode: Int, statusmsg: String, data: NetstatData)
+case class Entry(id: Option[Long], agent: String, action: String, sender: String, statuscode: Int, statusmsg: String, data: Data)
 
-case class NetstatData(out: List[NetstatRecord])
+case class Data(out: List[Record])
 
-case class NetstatRecord(id: Option[Long], proto: String, local_addr: String, foreign_addr: String, user: String, pid_program: String)
+case class Record(id: Option[Long], proto: String, local_addr: String, foreign_addr: String, user: String, pid_program: String)
 
-sealed abstract class NetstatRecordFilter(val link: String, val label: String, val proto: Option[String]) {
-  def accepts(r: NetstatRecord): Boolean = proto.isEmpty || proto.contains(r.proto)
+sealed abstract class RecordFilter(val link: String, val label: String, val proto: Option[String]) {
+  def accepts(r: Record): Boolean = proto.isEmpty || proto.contains(r.proto)
 }
 
-object NetstatRecordFilter {
+object RecordFilter {
 
-  object All extends NetstatRecordFilter("", "All", None)
+  object All extends RecordFilter("", "All", None)
 
-  object Tcp extends NetstatRecordFilter("tcp", "TCP", Some("tcp"))
+  object Tcp extends RecordFilter("tcp", "TCP", Some("tcp"))
 
-  object Udp extends NetstatRecordFilter("udp", "UDP", Some("udp"))
+  object Udp extends RecordFilter("udp", "UDP", Some("udp"))
 
-  val values = List[NetstatRecordFilter](All, Tcp, Udp)
+  val values = List[RecordFilter](All, Tcp, Udp)
 }
