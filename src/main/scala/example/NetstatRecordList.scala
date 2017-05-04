@@ -27,12 +27,12 @@ object NetstatRecordList {
         <.header(
           ^.className := "header"
         ),
-        records.nonEmpty ?= recordList(dispatch, proxy, tcpCount),
+        records.nonEmpty ?= recordList(dispatch, proxy, p.currentFilter, tcpCount),
         records.nonEmpty ?= footer(p, dispatch, p.currentFilter, tcpCount, udpCount)
       )
     }
 
-    def recordList(dispatch: Action => Callback, entries: List[NetstatEntry], tcpCount: Int) =
+    def recordList(dispatch: Action => Callback, entries: List[NetstatEntry], filter: NetstatRecordFilter, tcpCount: Int) =
       <.section(
         ^.className := "main",
         <.table(
@@ -49,11 +49,15 @@ object NetstatRecordList {
           entries.map(entry =>
             <.tbody(
               <.tr(
-                <.th(^.colSpan := 5)(
+                <.th(^.colSpan := 6)(
                   s"agent: ${entry.agent}, action: ${entry.action}, sender: ${entry.sender}, statuscode: ${entry.statuscode}, statusmsg: ${entry.statusmsg}"
                 )
               ),
-              entry.data.out.map(record => NetstatRecordView(NetstatRecordView.Props(record = record)))
+              entry.data.out.filter(filter.accepts).map(record =>
+                NetstatRecordView(NetstatRecordView.Props(
+                  record = record,
+                  onDelete = dispatch(DeleteRecord(entry.id, record.id))
+                )))
             )
           )
         )

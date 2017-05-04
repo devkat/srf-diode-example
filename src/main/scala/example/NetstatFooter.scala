@@ -23,6 +23,7 @@ object NetstatFooter {
         <.span(
           ^.className := "todo-count",
           <.strong(p.tcpCount), " TCP ", s" ${if (p.tcpCount == 1) "record" else "records"}",
+          ", ",
           <.strong(p.udpCount), " UDP ", s" ${if (p.udpCount == 1) "record" else "records"}"
         ),
         <.ul(

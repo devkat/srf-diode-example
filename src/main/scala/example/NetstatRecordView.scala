@@ -6,7 +6,8 @@ import org.scalajs.dom.ext.KeyCode
 
 object NetstatRecordView {
 
-  case class Props(record: NetstatRecord)
+  case class Props(record: NetstatRecord,
+                   onDelete: Callback)
 
   class Backend($ : BackendScope[Props, Unit]) {
     def render(p: Props): ReactElement = {
@@ -16,7 +17,10 @@ object NetstatRecordView {
         <.td(p.record.foreign_addr),
         <.td(p.record.local_addr),
         <.td(p.record.user),
-        <.td(p.record.pid_program)
+        <.td(p.record.pid_program),
+        <.td(
+          <.button(^.onClick --> p.onDelete)("×")
+        )
       )
     }
   }
