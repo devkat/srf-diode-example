@@ -2,17 +2,16 @@ package example
 
 import boopickle.Default._
 import diode.dev.{Hooks, PersistStateIDB}
+import japgolly.scalajs.react._
+import japgolly.scalajs.react.extra.router._
 import org.scalajs.dom
 
 import scala.scalajs.js.JSApp
-import scala.scalajs.js.annotation.JSExport
-import japgolly.scalajs.react._
-import japgolly.scalajs.react.extra.router._
-
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
 import scala.scalajs.js.typedarray._
 
-@JSExport("NetstatApp")
+@JSExportTopLevel("NetstatApp")
 object NetstatApp extends JSApp {
 
   val baseUrl = BaseUrl(dom.window.location.href.takeWhile(_ != '#'))

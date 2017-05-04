@@ -36,8 +36,17 @@ object NetstatRecordList {
       <.section(
         ^.className := "main",
         <.table(
+          ^.className := "record-list",
+          <.thead(
+            <.tr(
+              <.th("Protocol"),
+              <.th("Foreign addr"),
+              <.th("Local addr"),
+              <.th("User"),
+              <.th("PID program")
+            )
+          ),
           <.tbody(
-            ^.className := "todo-list",
             records.map(
               record =>
                 NetstatRecordView(NetstatRecordView.Props(record = record)))
