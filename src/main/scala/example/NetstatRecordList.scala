@@ -27,12 +27,12 @@ object NetstatRecordList {
         <.header(
           ^.className := "header"
         ),
-        records.nonEmpty ?= recordList(dispatch, filteredTodos, tcpCount),
+        records.nonEmpty ?= recordList(dispatch, proxy, tcpCount),
         records.nonEmpty ?= footer(p, dispatch, p.currentFilter, tcpCount, udpCount)
       )
     }
 
-    def recordList(dispatch: Action => Callback, records: List[NetstatRecord], tcpCount: Int) =
+    def recordList(dispatch: Action => Callback, entries: List[NetstatEntry], tcpCount: Int) =
       <.section(
         ^.className := "main",
         <.table(
@@ -46,10 +46,15 @@ object NetstatRecordList {
               <.th("PID program")
             )
           ),
-          <.tbody(
-            records.map(
-              record =>
-                NetstatRecordView(NetstatRecordView.Props(record = record)))
+          entries.map(entry =>
+            <.tbody(
+              <.tr(
+                <.th(^.colSpan := 5)(
+                  s"agent: ${entry.agent}, action: ${entry.action}, sender: ${entry.sender}, statuscode: ${entry.statuscode}, statusmsg: ${entry.statusmsg}"
+                )
+              ),
+              entry.data.out.map(record => NetstatRecordView(NetstatRecordView.Props(record = record)))
+            )
           )
         )
       )

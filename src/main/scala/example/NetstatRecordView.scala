@@ -25,6 +25,6 @@ object NetstatRecordView {
     .renderBackend[Backend]
     .build
 
-  def apply(P: Props) =
+  def apply(P: Props): ReactComponentU[Props, Unit, Backend, TopNode] =
     component.withKey(P.record.hashCode())(P)
 }
