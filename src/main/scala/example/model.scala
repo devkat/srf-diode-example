@@ -1,6 +1,8 @@
 package example
 
-case class NetstatModel(entries: List[Entry])
+import diode.data.Pot
+
+case class RootModel(entries: Pot[List[Entry]])
 
 case class Entry(id: Option[Long], agent: String, action: String, sender: String, statuscode: Int, statusmsg: String, data: Data)
 

@@ -19,6 +19,7 @@ button {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
+    cursor: default;
 }
 
 body {
@@ -33,6 +34,11 @@ body {
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-weight: 300;
+}
+
+.loading {
+    padding: 1em;
+    text-align: center;
 }
 
 button,
@@ -145,6 +151,12 @@ label[for='toggle-all'] {
 table.record-list {
     border-collapse: collapse;
     width: 100%;
+}
+
+table.record-list tbody th {
+    background-color: #dddddd;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .record-list td, .record-list th {
